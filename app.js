@@ -26,10 +26,10 @@ app.post("/",function(req,res){
       }
     ]
   }
-  const url = "https://us10.api.mailchimp.com/3.0/lists/abb20d2edf";
+  const url = "https://us10.api.mailchimp.com/3.0/lists/"+process.env.LIST_ID;
   const options = {
     method: "POST",
-    auth: "chewkameka:76c7fd66815e841d813bd6c2e807b489-us10"
+    auth: "chewkameka:"+process.env.API_KEY
   }
   var jsonData = JSON.stringify(data);
   const request = https.request(url, options, function(response){
